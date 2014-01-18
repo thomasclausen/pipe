@@ -8,16 +8,7 @@ Focused on typography and readability, **Pipe** enables the author to bring grea
 - Optimized for great reading experience
 - Focused on content
 - HTML5 semantics
-
-### Upcoming features
-- AJAX driven / Asynchronous content loading
-- Fully responsive
-- Google Universal Analytics snippet
-- OpenGraph and Twitter Cards meta's
-- Author page, which shows the author's info followed by a list of posts written by the auhtor.
-- Sitemap
-- RSS feed
-- Comments
+- Static page support
 
 ## Installing
 

@@ -1,0 +1,626 @@
+/**
+ * Main CSS file for Pipe
+ */
+
+/* ==========================================================================
+   Table of Content
+   ========================================================================== */
+
+/**
+ * Table of Content
+
+   1.  Basics
+   2.  Typography
+   3.  Header
+   4.  Home
+   5.  Post
+   6.  Page
+
+   6.  Media Query Tablet
+   7.  Media Query Phone
+
+ */
+
+/* ==========================================================================
+   1. Basics - Setting up some base styles
+   ========================================================================== */
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	font-size: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.625em;
+	color: rgb(44, 44, 44);
+	background-color: #f6f6f6;
+}
+h1 {
+	font: 1.75em 'Roboto Slab', serif;
+	line-height: 1.286em;
+	font-weight: 300;
+	color: rgba(44, 44, 44, 0.74);
+}
+h2 {
+	font: 1.5em 'Roboto Slab', serif;
+	line-height: 1.667em;
+	font-weight: 300;
+	color: rgba(44, 44, 44, 0.74);
+}
+h3 {
+	font-size: ;
+	text-transform: uppercase;
+}
+h4 {
+
+}
+a {
+	color: rgb(44, 44, 44);
+	text-decoration: underline;
+}
+a:hover,
+a:focus {
+	color: rgb(31, 61, 73);
+	text-decoration: none;
+}
+input,
+button,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+img {
+	vertical-align: middle;
+}
+
+
+/* ==========================================================================
+   2. Typografhy - Setting up typography styles
+   ========================================================================== */
+
+section {
+	width: 100%;
+	max-width: 970px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+article:before,
+article:after {
+	content: ' ';
+	display: table;
+}
+article:after {
+	clear: both;
+}
+
+
+/* ==========================================================================
+   3. Header
+   ========================================================================== */
+
+header {
+	width: 100%;
+	height: 344px;
+	text-align: center;
+	margin-bottom: 86px;
+	position: relative;
+	overflow: hidden;
+}
+header:before,
+header:after {
+	width: 100%;
+	height: 0;
+	border: 10px solid transparent;
+	position: absolute;
+	bottom: 0;
+	content: ' ';
+}
+header:before {
+	border-bottom-color: #f6f6f6;
+	right: 50%;
+}
+header:after {
+	border-bottom-color: #f6f6f6;
+	left: 50%;
+}
+header .blog-logo {
+	margin-top: 4px;
+	margin-bottom: -8px;
+	position: relative;
+}
+header .blog-title h1 {
+	font-size: 2em;
+	line-height: 1.875em;
+	color: rgba(255, 255, 255, 0.74);
+	padding: 0 42px;
+	background: rgba(31, 61, 73, 0.7);
+	margin-top: 0;
+	margin-bottom: 0;
+	display: inline-block;
+}
+header .blog-title h1 a {
+	color: rgba(255, 255, 255, 0.74);
+	text-decoration: none;
+	padding: 0 42px;
+	margin: 0 -42px;
+	display: block;
+}
+header .blog-description h2 {
+	color: rgba(255, 255, 255, 0.74);
+	padding: 0 40px;
+	background: rgba(31, 61, 73, 0.6);
+	margin-top: 0;
+	margin-bottom: 0;
+	display: inline-block;
+	box-shadow: 0 4px rgba(65, 130, 156, 0.6);
+}
+header .blog-cover {
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+
+/* ==========================================================================
+   3. Home - Styling specific to the home-template
+   ========================================================================== */
+
+.home-template {
+
+}
+.home-template article {
+	margin-bottom: 64px;
+	position: relative;
+}
+.home-template article .post-image {
+	width: 50%;
+	float: left;
+}
+.home-template article .post-image .rectangle {
+	width: 100%;
+	height: 0;
+	padding-bottom: 107.2165%;
+	overflow: hidden;
+}
+.home-template article .post-image .circle {
+	width: 107.2165%;
+	height: 0;
+	padding-bottom: 107.2165%;
+	background: rgba(65, 130, 156, 0.2);
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+.home-template article .post-image .image {
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.home-template article .post-image p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.home-template article .post-image .overlay {
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.2);
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: opacity 0.3s;
+}
+.home-template article .post-image:hover .overlay {
+	opacity: 1;
+}
+.home-template article .post-excerpt {
+	width: 50%;
+	padding: 77px 66px 0 66px;
+	float: left;
+}
+.home-template article .post-excerpt h1 {
+	margin-bottom: 1em;
+}
+.home-template article .post-excerpt h1 a {
+	color: rgba(44, 44, 44, 0.74);
+	text-decoration: none;
+	transition: color 0.3s;
+}
+.home-template article .post-excerpt h1 a:hover,
+.home-template article .post-excerpt h1 a:focus {
+	color: rgb(44, 44, 44);
+}
+.home-template article .post-excerpt .read-more {
+	font-size: 18px;
+	line-height: 50px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: rgb(31, 61, 73);
+	margin-top: 54px;
+	opacity: 0.6;
+	overflow: hidden;
+	transition: opacity 0.3s;
+}
+.home-template article .post-excerpt .read-more:hover,
+.home-template article .post-excerpt .read-more:focus {
+	opacity: 1;
+}
+.home-template article .post-excerpt .read-more a {
+	color: #1f3d49;
+	text-decoration: none;
+}
+.home-template article .post-excerpt .read-more .rectangle {
+	width: 50px;
+	height: 50px;
+	margin: 0 16px 2px -6px;
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+	transition: margin-left 0.3s;
+}
+.home-template article .post-excerpt .read-more:hover .rectangle,
+.home-template article .post-excerpt .read-more:focus .rectangle {
+	margin-left: 0;
+}
+.home-template article .post-excerpt .read-more .circle {
+	width: 50px;
+	height: 50px;
+	background: rgb(31, 61, 73);
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+}
+.home-template article .post-excerpt .read-more .circle img {
+	width: 14px;
+	height: 22px;
+	margin-top: -11px;
+	margin-left: -7px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+
+/* ==========================================================================
+   4. Post - Styling specific to the post-template
+   ========================================================================== */
+
+.post-template {
+
+}
+.post-template article {
+	margin-bottom: 64px;
+}
+.post-template article .post-image {
+	text-align: center;
+	margin-bottom: 59px;
+	position: relative;
+}
+.post-template article .post-image img {
+	max-width: 100%;
+}
+.post-template article .post-caption {
+	width: 242px;
+	font-size: 0.875em;
+	color: rgb(255, 255, 255);
+	text-align: left;
+	position: absolute;
+	bottom: -60px;
+	left: -30px;
+}
+.post-template article .post-caption .rectangle {
+	width: 100%;
+	height: 0;
+	padding-bottom: 107.2165%;
+	overflow: hidden;
+}
+.post-template article .post-caption .circle {
+	width: 107.2165%;
+	height: 0;
+	padding-bottom: 107.2165%;
+	background: rgb(31, 61, 73);
+	border-radius: 50%;
+	margin-left: -18px;
+	overflow: hidden;
+	position: relative;
+}
+.post-template article .post-caption p {
+	padding: 50px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.post-template article .post-content {
+	width: 100%;
+	max-width: 630px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.post-template article .post-content h1 {
+	text-align: center;
+}
+.post-template article .post-content .post-meta {
+	font-size: 0.75em;
+	font-style: italic;
+	color: rgba(44, 44, 44, 0.54);
+	margin-top: 28px;
+	margin-bottom: 27px;
+}
+.post-template article .post-content .post-meta + p img {
+	display: none;
+}
+.post-template article .post-content img {
+	max-width: 100%;
+}
+
+
+/* ==========================================================================
+   5. Page - Styling specific to the page-template
+   ========================================================================== */
+
+.post-template.page {
+
+}
+.post-template.page article .post-content {
+	width: 100%;
+	max-width: 630px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.post-template.page article .post-content h1 {
+	text-align: center;
+}
+.post-template.page article .post-content img {
+	max-width: 100%;
+}
+
+
+/* ==========================================================================
+   4. Share
+   ========================================================================== */
+
+@font-face {
+	font-family: 'fontello';
+	src: url('../fonts/fontello.eot?97333172');
+	src: url('../fonts/fontello.eot?97333172#iefix') format('embedded-opentype'),
+		 url('../fonts/fontello.woff?97333172') format('woff'),
+		 url('../fonts/fontello.ttf?97333172') format('truetype'),
+		 url('../fonts/fontello.svg?97333172#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	@font-face {
+		font-family: 'fontello';
+		src: url('../fonts/fontello.svg?97333172#fontello') format('svg');
+	}
+}
+.post-share {
+	width: 100%;
+	max-width: 970px;
+	text-align: center;
+	padding-top: 35px;
+	margin: 87px auto 24px auto;
+	position: relative;
+}
+.post-share:before {
+	width: 110px;
+	height: 10px;
+	background-color: rgb(31, 61, 73);
+	margin-left: -55px;
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	content: ' ';
+}
+.post-share h3 {
+	color: rgba(44, 44, 44, 0.54);
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.post-share .icon {
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	border-radius: 32px;
+	margin-right: -4px;
+	margin-left: -4px;
+	display: inline-block;
+	position: relative;
+	opacity: 0.8;
+	-moz-transition: margin 0.2s;
+	-webkit-transition: margin 0.2s;
+	transition: margin 0.2s;
+}
+.post-share .icon:hover {
+	margin-right: 0;
+	margin-left: 0;
+}
+.post-share .icon:first-child:hover {
+	margin-left: -4px;
+}
+.post-share .icon:last-child:hover {
+	margin-right: -4px;
+}
+.post-share .icon:after {
+	width: 32px;
+	height: 32px;
+	font-size: 14px;
+	font-family: 'fontello';
+	line-height: 31px;
+	color: #fff;
+	padding-top: 1px;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	cursor: help;
+}
+.post-share .icon.twitter {
+	background: rgb(41, 181, 233);
+}
+.post-share .icon.facebook {
+	background: rgb(59, 91, 153);
+}
+.post-share .icon.gplus {
+	background: rgb(215, 74, 56);
+}
+.post-share .icon.linkedin {
+	background: rgb(65, 131, 196);
+}
+.post-share .icon.twitter:after {
+	content: '\e800';
+}
+.post-share .icon.facebook:after {
+	content: '\e801';
+}
+.post-share .icon.gplus:after {
+	content: '\e802';
+}
+.post-share .icon.linkedin:after {
+	content: '\e803';
+}
+.post-share .icon a {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 100%;
+}
+
+
+/* ==========================================================================
+   7. Pagination
+   ========================================================================== */
+
+nav.blog-pagination {
+	width: 100%;
+	max-width: 848px;
+	height: 60px;
+	font: 1.125em 'Open Sans', Arial, sans-serif;
+	font-weight: 700;
+	line-height: 60px;
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+	text-align: center;
+	background: rgba(31, 61, 73, 0.2);
+	margin: 128px auto;
+	position: relative;
+}
+nav.blog-pagination ul {
+	padding-left: 0;
+	list-style: none;
+}
+nav.blog-pagination ul li {
+	display: inline-block;
+}
+nav.blog-pagination ul li.prev,
+nav.blog-pagination ul li.next {
+	width: 60px;
+	height: 60px;
+	background: rgba(31, 61, 73, 0.2) url(../images/arrow.svg) no-repeat 50% 50%;
+	position: absolute;
+	top: 0;
+	white-space: nowrap;
+}
+nav.blog-pagination ul li.prev {
+	background: rgba(31, 61, 73, 0.2) url(../images/arrow.svg) no-repeat 50% 50%;
+	margin-right: 1px;
+	right: 100%;
+}
+nav.blog-pagination ul li.next {
+	background: rgba(31, 61, 73, 0.2) url(../images/arrow.svg) no-repeat 50% 50%;
+	margin-left: 1px;
+	left: 100%;
+}
+nav.blog-pagination ul li.prev,
+nav.blog-pagination ul li.next {
+	background: rgb(31, 61, 73);
+}
+nav.blog-pagination ul li.prev a,
+nav.blog-pagination ul li.next a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	padding-right: 20px;
+	padding-left: 20px;
+	background: rgb(31, 61, 73);
+	display: none;
+	position: absolute;
+	top: 0;
+}
+nav.blog-pagination ul li.prev a {
+	margin-left: 1px;
+	left: 100%;
+}
+nav.blog-pagination ul li.next a {
+	margin-right: 1px;
+	right: 100%;
+}
+nav.blog-pagination ul li.prev:hover a,
+nav.blog-pagination ul li.prev:focus a,
+nav.blog-pagination ul li.next:hover a,
+nav.blog-pagination ul li.next:focus a {
+	display: inline-block;
+}
+nav.blog-pagination ul li.next h3 {
+	display: inline-block;
+}
+
+
+/* ==========================================================================
+   8. Footer
+   ========================================================================== */
+
+footer {
+	width: 100%;
+	max-width: 970px;
+	font-size: 0.875em;
+	color: rgba(44, 44, 44, 0.74);
+	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 10px;
+	margin: 64px auto 0 auto;
+	position: relative;
+}
+footer:before {
+	width: 110px;
+	height: 10px;
+	background-color: rgb(31, 61, 73);
+	margin-left: -55px;
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	content: ' ';
+}
+footer a {
+	color: rgba(44, 44, 44, 0.74);
+}
+footer span {
+	margin-right: 14px;
+	margin-left: 14px;
+	white-space: nowrap;
+}

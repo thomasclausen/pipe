@@ -1,0 +1,11 @@
+<nav class="blog-pagination" role="pagination">
+	<ul>
+		{{#if prev}}
+			<li class="prev"><a href="{{pageUrl prev}}"><h3 class="label">Previous posts</h3><span class="icon"><img src="{{asset "images/arrow.svg"}}" alt="" /></span></a></li>
+		{{/if}}
+		<li><h3>Page {{page}} of {{pages}}</h3></li>
+		{{#if next}}
+			<li class="next"><a href="{{pageUrl next}}"><h3 class="label">Next posts</h3><span class="icon"><img src="{{asset "images/arrow.svg"}}" alt="" /></span></a></li>
+		{{/if}}
+	</ul>
+</nav>
