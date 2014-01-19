@@ -1,0 +1,20 @@
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="@twitterusername" />
+{{#if post}}
+	<meta name="twitter:title" content="{{meta_title}} - {{@blog.title}}" />
+	{{#post}}<meta name="twitter:description" content="{{excerpt}}" />{{/post}}
+{{else}}
+	<meta name="twitter:title" content="{{@blog.title}}" />
+	<meta name="twitter:description" content="{{@blog.description}}" />
+{{/if}}
+<meta property="og:url" content="{{url absolute="true"}}" />
+<meta property="og:site_name" content="{{@blog.title}}" />
+{{#if post}}
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="{{meta_title}}" />
+	{{#post}}<meta property="og:description" content="{{excerpt}}" />{{/post}}
+{{else}}
+	<meta property="og:type" content="blog"/>
+	<meta property="og:title" content="{{@blog.title}}" />
+	<meta property="og:description" content="{{@blog.description}}" />
+{{/if}}
