@@ -369,11 +369,15 @@ header .blog-cover {
 	margin-top: 28px;
 	margin-bottom: 27px;
 }
-.post-template article .post-content .post-meta + p img {
-	display: none;
+.post-template article .post-content p + p {
+	text-indent: 1.5em;
+	margin-top: 0;
 }
 .post-template article .post-content img {
 	max-width: 100%;
+}
+.post-template article .post-content .post-meta + p img {
+	display: none;
 }
 
 
@@ -384,16 +388,20 @@ header .blog-cover {
 .post-template.page {
 
 }
-.post-template.page article .post-content {
+.post-template.page article .page-content {
 	width: 100%;
 	max-width: 630px;
 	margin-right: auto;
 	margin-left: auto;
 }
-.post-template.page article .post-content h1 {
+.post-template.page article .page-content h1 {
 	text-align: center;
 }
-.post-template.page article .post-content img {
+.post-template.page article .page-content p + p {
+	text-indent: 1.5em;
+	margin-top: 0;
+}
+.post-template.page article .page-content img {
 	max-width: 100%;
 }
 
