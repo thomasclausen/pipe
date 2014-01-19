@@ -11,10 +11,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
 	{{#if post}}
-		<title>{{meta_title}} - {{@blog.title}}</title>
-		<meta name="description" content="{{meta_description}}" />
+		{{#post}}
+			<title>{{meta_title}} - {{@blog.title}}</title>
+			<meta name="description" content="{{excerpt characters="156"}}" />
+		{{/post}}
 	{{else}}
-		<title>{{@blog.title}} - {{settings.title}}</title>
+		<title>{{@blog.title}}</title>
 		<meta name="description" content="{{@blog.description}}" />
 	{{/if}}
 
@@ -33,9 +35,17 @@
 
 	<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="{{meta_title}}">
-	<meta name="twitter:description" content="{{meta_description}}">
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:creator" content="@twitterusername" />
+	{{#if post}}
+		{{#post}}
+			<meta name="twitter:title" content="{{meta_title}} - {{@blog.title}}" />
+			<meta name="twitter:description" content="{{excerpt}}" />
+		{{/post}}
+	{{else}}
+		<meta name="twitter:title" content="{{@blog.title}}" />
+		<meta name="twitter:description" content="{{@blog.description}}" />
+	{{/if}}
 
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="{{meta_title}}">
