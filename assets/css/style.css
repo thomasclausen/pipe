@@ -269,7 +269,7 @@ header .blog-cover {
 	color: rgb(44, 44, 44);
 }
 .home-template article .post-excerpt .read-more,
-.archive-template article .post-excerpt .read-more, {
+.archive-template article .post-excerpt .read-more {
 	font-size: 18px;
 	line-height: 50px;
 	font-weight: 700;
@@ -281,7 +281,7 @@ header .blog-cover {
 	transition: opacity 0.3s;
 }
 .home-template article .post-excerpt .read-more:hover,
-.archive-template article .post-excerpt .read-more:hover, {
+.archive-template article .post-excerpt .read-more:hover {
 	opacity: 1;
 }
 .home-template article .post-excerpt .read-more a,
@@ -388,10 +388,6 @@ header .blog-cover {
 	margin-top: 28px;
 	margin-bottom: 27px;
 }
-.post-template article .post-content p + p {
-	text-indent: 1.5em;
-	margin-top: 0;
-}
 .post-template article .post-content img {
 	max-width: 100%;
 }
@@ -415,10 +411,6 @@ header .blog-cover {
 }
 .post-template.page article .page-content h1 {
 	text-align: center;
-}
-.post-template.page article .page-content p + p {
-	text-indent: 1.5em;
-	margin-top: 0;
 }
 .post-template.page article .page-content img {
 	max-width: 100%;
