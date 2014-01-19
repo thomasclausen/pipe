@@ -28,6 +28,7 @@
 				$('article .post-content p:first-of-type img:first-of-type').prependTo('article .post-image');
 				$('<meta name="twitter:image:src" content="' + $('article .post-image img').attr('src') + '" />').insertAfter('head meta[content=summary]');
 				$('head meta[content=summary]').attr('content', 'summary_large_image');
+				$('<meta property="og:image" content="' + $('article .post-image img').attr('src') + '" />').insertAfter('head meta[content=article]');
 				if ($('article .post-content p:first-of-type').html() == '') {
 					$('article .post-content p:first-of-type').remove();
 				}
