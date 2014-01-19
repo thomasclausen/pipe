@@ -183,24 +183,29 @@ header .blog-cover {
    3. Home - Styling specific to the home-template
    ========================================================================== */
 
-.home-template {
+.home-template,
+.archive-template {
 
 }
-.home-template article {
+.home-template article,
+.archive-template article {
 	margin-bottom: 64px;
 	position: relative;
 }
-.home-template article .post-image {
+.home-template article .post-image,
+.archive-template article .post-image {
 	width: 50%;
 	float: left;
 }
-.home-template article .post-image .rectangle {
+.home-template article .post-image .rectangle,
+.archive-template article .post-image .rectangle {
 	width: 100%;
 	height: 0;
 	padding-bottom: 107.2165%;
 	overflow: hidden;
 }
-.home-template article .post-image .circle {
+.home-template article .post-image .circle,
+.archive-template article .post-image .circle {
 	width: 107.2165%;
 	height: 0;
 	padding-bottom: 107.2165%;
@@ -209,7 +214,8 @@ header .blog-cover {
 	overflow: hidden;
 	position: relative;
 }
-.home-template article .post-image .image {
+.home-template article .post-image .image,
+.archive-template article .post-image .image {
 	width: 100%;
 	height: 100%;
 	background-repeat: no-repeat;
@@ -220,11 +226,13 @@ header .blog-cover {
 	top: 0;
 	left: 0;
 }
-.home-template article .post-image p {
+.home-template article .post-image p,
+.archive-template article .post-image p {
 	margin-top: 0;
 	margin-bottom: 0;
 }
-.home-template article .post-image .overlay {
+.home-template article .post-image .overlay,
+.archive-template article .post-image .overlay {
 	width: 100%;
 	height: 100%;
 	background: rgba(255, 255, 255, 0.2);
@@ -234,27 +242,34 @@ header .blog-cover {
 	left: 0;
 	transition: opacity 0.3s;
 }
-.home-template article .post-image:hover .overlay {
+.home-template article .post-image:hover .overlay,
+.archive-template article .post-image:hover .overlay {
 	opacity: 1;
 }
-.home-template article .post-excerpt {
+.home-template article .post-excerpt,
+.archive-template article .post-excerpt {
 	width: 50%;
 	padding: 77px 66px 0 66px;
 	float: left;
 }
-.home-template article .post-excerpt h1 {
+.home-template article .post-excerpt h1,
+.archive-template article .post-excerpt h1 {
 	margin-bottom: 1em;
 }
-.home-template article .post-excerpt h1 a {
+.home-template article .post-excerpt h1 a,
+.archive-template article .post-excerpt h1 a {
 	color: rgba(44, 44, 44, 0.74);
 	text-decoration: none;
 	transition: color 0.3s;
 }
 .home-template article .post-excerpt h1 a:hover,
-.home-template article .post-excerpt h1 a:focus {
+.home-template article .post-excerpt h1 a:focus,
+.archive-template article .post-excerpt h1 a:hover,
+.archive-template article .post-excerpt h1 a:focus {
 	color: rgb(44, 44, 44);
 }
-.home-template article .post-excerpt .read-more {
+.home-template article .post-excerpt .read-more,
+.archive-template article .post-excerpt .read-more, {
 	font-size: 18px;
 	line-height: 50px;
 	font-weight: 700;
@@ -266,14 +281,16 @@ header .blog-cover {
 	transition: opacity 0.3s;
 }
 .home-template article .post-excerpt .read-more:hover,
-.home-template article .post-excerpt .read-more:focus {
+.archive-template article .post-excerpt .read-more:hover, {
 	opacity: 1;
 }
-.home-template article .post-excerpt .read-more a {
+.home-template article .post-excerpt .read-more a,
+.archive-template article .post-excerpt .read-more a {
 	color: #1f3d49;
 	text-decoration: none;
 }
-.home-template article .post-excerpt .read-more .rectangle {
+.home-template article .post-excerpt .read-more .rectangle,
+.archive-template article .post-excerpt .read-more .rectangle {
 	width: 50px;
 	height: 50px;
 	margin: 0 16px 2px -6px;
@@ -283,10 +300,11 @@ header .blog-cover {
 	transition: margin-left 0.3s;
 }
 .home-template article .post-excerpt .read-more:hover .rectangle,
-.home-template article .post-excerpt .read-more:focus .rectangle {
+.archive-template article .post-excerpt .read-more:hover .rectangle {
 	margin-left: 0;
 }
-.home-template article .post-excerpt .read-more .circle {
+.home-template article .post-excerpt .read-more .circle,
+.archive-template article .post-excerpt .read-more .circle {
 	width: 50px;
 	height: 50px;
 	background: rgb(31, 61, 73);
@@ -294,7 +312,8 @@ header .blog-cover {
 	position: relative;
 	overflow: hidden;
 }
-.home-template article .post-excerpt .read-more .circle img {
+.home-template article .post-excerpt .read-more .circle img,
+.archive-template article .post-excerpt .read-more .circle img {
 	width: 14px;
 	height: 22px;
 	margin-top: -11px;
@@ -531,7 +550,7 @@ nav.blog-pagination {
 	height: 60px;
 	font: 1.125em 'Open Sans', Arial, sans-serif;
 	font-weight: 700;
-	line-height: 60px;
+	line-height: 3.333em;
 	color: rgb(255, 255, 255);
 	text-transform: uppercase;
 	text-align: center;
@@ -550,51 +569,59 @@ nav.blog-pagination ul li.prev,
 nav.blog-pagination ul li.next {
 	width: 60px;
 	height: 60px;
-	background: rgba(31, 61, 73, 0.2) url(../images/arrow.svg) no-repeat 50% 50%;
+	background: rgba(31, 61, 73, 0.2);
 	position: absolute;
 	top: 0;
 	white-space: nowrap;
 }
 nav.blog-pagination ul li.prev {
-	background: rgba(31, 61, 73, 0.2) url(../images/arrow.svg) no-repeat 50% 50%;
 	margin-right: 1px;
 	right: 100%;
 }
 nav.blog-pagination ul li.next {
-	background: rgba(31, 61, 73, 0.2) url(../images/arrow.svg) no-repeat 50% 50%;
 	margin-left: 1px;
 	left: 100%;
 }
-nav.blog-pagination ul li.prev,
-nav.blog-pagination ul li.next {
+nav.blog-pagination ul li.prev:hover,
+nav.blog-pagination ul li.next:hover {
 	background: rgb(31, 61, 73);
+}
+nav.blog-pagination ul li h3 {
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-top: 0;
+	margin-bottom: 0;
+	display: inline-block;
 }
 nav.blog-pagination ul li.prev a,
 nav.blog-pagination ul li.next a {
 	color: rgb(255, 255, 255);
 	text-decoration: none;
-	padding-right: 20px;
-	padding-left: 20px;
+	display: block;
+}
+nav.blog-pagination ul li.prev h3,
+nav.blog-pagination ul li.next h3 {
 	background: rgb(31, 61, 73);
 	display: none;
 	position: absolute;
 	top: 0;
 }
-nav.blog-pagination ul li.prev a {
+nav.blog-pagination ul li.prev h3 {
 	margin-left: 1px;
 	left: 100%;
 }
-nav.blog-pagination ul li.next a {
+nav.blog-pagination ul li.next h3 {
 	margin-right: 1px;
 	right: 100%;
 }
-nav.blog-pagination ul li.prev:hover a,
-nav.blog-pagination ul li.prev:focus a,
-nav.blog-pagination ul li.next:hover a,
-nav.blog-pagination ul li.next:focus a {
+nav.blog-pagination ul li.prev:hover h3,
+nav.blog-pagination ul li.next:hover h3 {
 	display: inline-block;
 }
-nav.blog-pagination ul li.next h3 {
+nav.blog-pagination ul li.prev .icon,
+nav.blog-pagination ul li.next .icon {
+	width: 60px;
+	height: 60px;
 	display: inline-block;
 }
 
