@@ -41,7 +41,15 @@ All configurable files are located in `pipe/partials/custom`.
 
 This file contains all the meta tags for the social networks.
 
-You will need to change **@twitterusername** to your real Twitter username
+You will need to change **@twitterusername** to your real Twitter username.
+
+#### navigation.hbs
+
+This file contains the blog navigation in the header.
+
+If you don't wan't to use the navigation simply delete the content of the file.<br />
+If the navigation fits your needs perfectly simply create two pages, one with the URL **about** and the other with the URL **contact**.<br />
+If you need extra links in the navigation, just copy one of the lines starting with `<li>` and change the link and text.
 
 #### analytics.hbs
 
