@@ -606,21 +606,23 @@ header nav.blog-navigation ul li a:active {
 
 nav.blog-pagination {
 	width: 100%;
-	max-width: 848px;
+	max-width: 970px;
 	height: 60px;
 	font: 1.125em 'Open Sans', Arial, sans-serif;
 	font-weight: 700;
-	line-height: 3.334em;
+	line-height: 3.333em;
 	color: rgb(255, 255, 255);
 	text-transform: uppercase;
 	text-align: center;
-	background: rgba(31, 61, 73, 0.2);
+    padding-right: 61px;
+    padding-left: 61px;
 	margin: 128px auto;
-	position: relative;
 }
 nav.blog-pagination ul {
 	padding-left: 0;
 	list-style: none;
+	background: rgba(31, 61, 73, 0.2);
+	position: relative;
 }
 nav.blog-pagination ul li {
 	display: inline-block;
