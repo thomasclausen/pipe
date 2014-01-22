@@ -224,6 +224,27 @@ header .blog-cover {
 	left: 0;
 	z-index: -1;
 }
+header nav.blog-navigation ul {
+    padding-left: 0;
+    margin-top: 3em;
+}
+header nav.blog-navigation ul li {
+	display: inline-block;
+}
+header nav.blog-navigation ul li a {
+	color: rgba(255, 255, 255, 0.74);
+    text-decoration: none;
+	padding: 0 1em;
+	background: rgba(31, 61, 73, 0.2);
+	display: block;
+}
+header nav.blog-navigation ul li a:hover,
+header nav.blog-navigation ul li a:focus {
+	background: rgba(31, 61, 73, 0.4);
+}
+header nav.blog-navigation ul li a:active {
+	background: rgba(31, 61, 73, 0.6);
+}
 
 
 /* ==========================================================================
@@ -389,7 +410,7 @@ header .blog-cover {
 .post-template article .post-image img {
 	max-width: 100%;
 }
-.post-template article .post-caption {
+.post-template article .post-image-caption {
 	width: 242px;
 	font-size: 0.875em;
 	color: rgb(255, 255, 255);
@@ -398,13 +419,13 @@ header .blog-cover {
 	bottom: -60px;
 	left: -30px;
 }
-.post-template article .post-caption .rectangle {
+.post-template article .post-image-caption .rectangle {
 	width: 100%;
 	height: 0;
 	padding-bottom: 107.2165%;
 	overflow: hidden;
 }
-.post-template article .post-caption .circle {
+.post-template article .post-image-caption .circle {
 	width: 107.2165%;
 	height: 0;
 	padding-bottom: 107.2165%;
@@ -414,7 +435,7 @@ header .blog-cover {
 	overflow: hidden;
 	position: relative;
 }
-.post-template article .post-caption p {
+.post-template article .post-image-caption p {
 	padding: 50px;
 	margin-top: 0;
 	margin-bottom: 0;

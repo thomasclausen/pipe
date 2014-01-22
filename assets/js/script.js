@@ -31,9 +31,18 @@
 				$('<meta property="og:image" content="' + $('article .post-image img').attr('src') + '" />').insertAfter('head meta[content=article]');
 				if ($('article .post-content > p:first-of-type').html() == '') {
 					$('article .post-content > p:first-of-type').remove();
-				}
-			}
-			$('article .post-content .post-meta time').html($('article .post-content .post-meta time').text().substr(0, 2) + '<sup>' + $('article .post-content .post-meta time').text().substr(2, 2) + '</sup>' + $('article .post-content .post-meta time').text().substr(5));
+				} else {
+                    $('article .post-content > p:first-of-type').appendTo('article .post-image .post-image-caption .rectangle .circle');
+                }
+			} else {
+                $('article .post-image .post-image-caption').remove();
+            }
+			
+            var post_meta = $('.post-meta time');
+            post_meta.html(post_meta.html().replace('st', '<sup>st</sup>'));
+            post_meta.html(post_meta.html().replace('nd', '<sup>nd</sup>'));
+            post_meta.html(post_meta.html().replace('rd', '<sup>rd</sup>'));
+            post_meta.html(post_meta.html().replace('th', '<sup>th</sup>'));
 		}
 	});
 }(jQuery));

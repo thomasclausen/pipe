@@ -1,13 +1,11 @@
 {{!< default}}
 
-<article class="post-{{id}} {{post_class}}" role="article">
-	{{#post}}
+{{#post}}
+    <article id="post-{{id}}" class="{{post_class}}" role="article">
 		<div class="post-image">
-			<div class="post-caption">
+			<div class="post-image-caption">
 				<div class="rectangle">
-					<div class="circle">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae justo vel tellus pharetra.</p>
-					</div>
+					<div class="circle"></div>
 				</div>
 			</div>
 		</div>
@@ -23,5 +21,5 @@
 			<div class="icon gplus"><a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'googleplus-share', 'width=560,height=360');return false;">Google+</a></div>
 			<div class="icon linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=560,height=500');return false;">LinkedIn</a></div>
 		</div>
-	{{/post}}
-</article>
+    </article>
+{{/post}}
