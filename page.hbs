@@ -1,10 +1,26 @@
 {{!< default}}
 
-<article id="page-{{id}}" class="{{post_class}}" role="article">
-	{{#post}}
+{{#post}}
+	{{#contentFor "meta-twitter"}}
+		<meta name="twitter:title" content="{{title}}" />
+		<meta name="twitter:description" content="{{excerpt}}" />
+	{{/contentFor}}
+
+	{{#contentFor "meta-facebook"}}
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="{{title}}" />
+		<meta property="og:description" content="{{excerpt}}" />
+	{{/contentFor}}
+
+	{{#contentFor "meta-gplus"}}
+		<meta itemprop="name" content="{{title}}">
+		<meta itemprop="description" content="{{excerpt}}">
+	{{/contentFor}}
+
+	<article id="page-{{id}}" class="{{post_class}}" role="article">
 		<div class="page-content">
 			<h1 class="page-title">{{{title}}}</h2>
 			{{content}}
 		</div>
-	{{/post}}
-</article>
+	</article>
+{{/post}}
