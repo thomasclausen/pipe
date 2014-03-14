@@ -27,7 +27,7 @@ $ git clone https://github.com/thomasclausen/pipe/ "pipe"
 5. That's all, now its time to [configure](#configuring) your theme
 
 ### Manually
-1. Download the files using the [GitHub .zip download](https://github.com/thomasclausen/pipe/archive/master.zip) option
+1. Download the files using the [GitHub .zip download](https://github.com/thomasclausen/pipe-ghost/archive/master.zip) option
 2. Copy the contents of the .zip file into your Ghost theme directory `ghost/content/themes/pipe`
 3. Restart Ghost
 4. Log in to your dashboard and navigate to Settings > Theme and select **Pipe** and save
