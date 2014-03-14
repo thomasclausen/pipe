@@ -20,7 +20,7 @@ Focused on typography and readability, **Pipe** enables the author to bring grea
 1. Navigate to your Ghost theme directory `ghost/content/themes`
 2. Clone the theme repository using the command below
 ```sh
-$ git clone https://github.com/thomasclausen/pipe/ "pipe"
+$ git clone https://github.com/thomasclausen/pipe-ghost/ "pipe"
 ```
 3. Restart Ghost
 4. Log in to your dashboard and navigate to Settings > Theme and select **Pipe** and save
