@@ -116,10 +116,11 @@ gulp.task('zip', function() {
 });
 
 gulp.task('upload', function () {
-  gulp.src('dist/**', { cwd: path.join(process.cwd(), 'dist')})
+  gulp.src('**', { cwd: path.join(process.cwd(), 'dist')})
     .pipe(ftp({
       host: 'website.com',
       user: 'johndoe',
-      pass: '1234'
+      pass: '1234',
+      remotePath: '/html/'
     }));
 });
