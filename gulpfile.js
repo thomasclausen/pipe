@@ -1,11 +1,18 @@
 var gulp = require('gulp'),
+    path = require('path'),
     clean = require('gulp-clean'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
+    csslint = require('gulp-csslint'),
     cssmin = require('gulp-cssmin'),
+    jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
-    notify = require('gulp-notify');
+    notify = require('gulp-notify'),
+    watch = require('gulp-watch'),
+    zip = require('gulp-zip'),
+    ftp = require('gulp-ftp'),
+    pkg = require('./package.json');
 
 var paths = {
   copy: {
@@ -30,22 +37,37 @@ var paths = {
   images: 'src/assets/images/*'
 };
 
+gulp.task('clean', function() {
+  return gulp.src('dist', {read: false})
+    .pipe(clean());
+});
+
 gulp.task('styles', function() {
   return gulp.src(paths.styles)
-    .pipe(concat('pipe.css'))
+    .pipe(concat(pkg.name + '.css'))
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/assets/css'))
     .pipe(notify({ message: 'Styles task complete' }));
 });
+gulp.task('styles-test', function() {
+  return gulp.src(paths.styles)
+    .pipe(csslint())
+    .pipe(csslint.reporter());
+});
 
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
-    .pipe(concat('pipe.js', {newLine: ';'}))
+    .pipe(concat(pkg.name + '.js', {newLine: ';'}))
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/assets/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
+});
+gulp.task('scripts-test', function() {
+  return gulp.src(paths.scripts)
+    .pipe(jshint())
+    .pipe(jshint.reporter());
 });
 
 gulp.task('images', function() {
@@ -68,6 +90,36 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('dist/assets/js/'));
 });
 
-gulp.task('default', function() {
-    gulp.start('styles', 'scripts', 'images', 'copy');
+gulp.task('watch', function() {
+  gulp.watch(paths.styles, ['styles-test', 'styles']);
+  gulp.watch(paths.scripts, ['scripts-test', 'scripts']);
+  gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.copy.root, ['copy']);
+  gulp.watch(paths.copy.partials_root, ['copy']);
+  gulp.watch(paths.copy.partials_custom, ['copy']);
+  gulp.watch(paths.copy.fonts, ['copy']);
+  gulp.watch(paths.copy.js, ['copy']);
+});
+
+gulp.task('default', ['clean'], function() {
+  gulp.start('styles', 'scripts', 'images', 'copy');
+});
+
+gulp.task('test', function() {
+  gulp.start('styles-test', 'scripts-test');
+});
+
+gulp.task('zip', function() {
+  gulp.src('**', { cwd: path.join(process.cwd(), 'dist')})
+    .pipe(zip(pkg.name + '-ghost.zip'))
+    .pipe(gulp.dest('.'));
+});
+
+gulp.task('upload', function () {
+  gulp.src('dist/**', { cwd: path.join(process.cwd(), 'dist')})
+    .pipe(ftp({
+      host: 'website.com',
+      user: 'johndoe',
+      pass: '1234'
+    }));
 });
