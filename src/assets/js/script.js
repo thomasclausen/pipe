@@ -2,10 +2,10 @@
  * Main JS file for Pipe
  */
 
-(function ($) {
++function($) {
 	"use strict";
 
-	$(document).ready(function(){
+	$(document).ready(function() {
 		$('html').removeClass('no-js');
 
 		if ($('body').hasClass('home-template') || $('body').hasClass('archive-template')) {
@@ -45,4 +45,4 @@
             post_meta.html(post_meta.html().replace('th', '<sup>th</sup>'));
 		}
 	});
-}(jQuery));
+}(jQuery);
