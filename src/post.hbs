@@ -34,15 +34,15 @@
 		</div>
 		<div class="post-content">
 			<h1 class="post-title">{{{title}}}</h2>
-			<div class="post-meta">Published by {{author.name}} on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="Do MMMM YYYY"}}</time></div>
 			{{content}}
+			<div class="post-meta">&mdash; Published by {{#if author.website}}<a href="{{author.website}}">{{author.name}}</a>{{else}}{{author.name}}{{/if}} on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="Do MMMM YYYY"}}</time> {{tags prefix="on " separator=" | "}}</div>
 		</div>
 		<div class="post-share">
 			<h3>Share this post</h3>
-			<div class="icon twitter"><a href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=560,height=432');return false;">Twitter</a></div>
+			<div class="icon twitter"><a href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=560,height=432');return false;">Twitter</a></div>
 			<div class="icon facebook"><a href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share', 'width=560,height=360');return false;">Facebook</a></div>
 			<div class="icon gplus"><a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'googleplus-share', 'width=560,height=360');return false;">Google+</a></div>
-			<div class="icon linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=560,height=500');return false;">LinkedIn</a></div>
+			<div class="icon linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}&amp;title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=560,height=500');return false;">LinkedIn</a></div>
 		</div>
 	</article>
 {{/post}}

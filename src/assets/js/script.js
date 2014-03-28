@@ -8,19 +8,18 @@
 	$(document).ready(function() {
 		$('html').removeClass('no-js');
 
+		$('article .post-image').fitVids();
+
 		if ($('body').hasClass('home-template') || $('body').hasClass('archive-template')) {
 			$('article').each(function() {
-				if ($('.post-image .rectangle .circle img', this).attr('src') !== undefined) {
-					$('.post-image .rectangle .circle', this).prepend('<div class="image" />');
-					$('.post-image .rectangle .circle .image', this).css({
-						backgroundImage: 'url(' + $('.post-image .rectangle .circle img', this).attr('src') + ')'
+				if ($('.post-image img', this).attr('src') !== undefined) {
+					$('.post-image p', this).prepend('<div class="image" />');
+					$('.post-image .image', this).css({
+						backgroundImage: 'url(' + $('.post-image img', this).attr('src') + ')'
 					});
-					$('.post-image .rectangle .circle p', this).remove();
+					$('.post-image img', this).remove();
 				}
 			});
-			/*$('article .post-image').on('click', function() {
-				$(this).parent().find('.post-content a').attr('href');
-			});*/
 		}
 
 		if ($('body').hasClass('post-template')) {

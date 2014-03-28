@@ -17,7 +17,6 @@
 	<meta name="description" content="{{@blog.description}}" />
 {{/if}}
 <meta name="HandheldFriendly" content="True" />
-<meta name="MobileOptimized" content="320" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <link rel="stylesheet" id="google-font-css" href="//fonts.googleapis.com/css?family=Roboto+Slab:300,400|Open+Sans:400,700" />
@@ -61,15 +60,14 @@
 </section>
 
 <footer class="blog-footer" role="contentinfo">
-	<div class="container">
-		<p>Copyright &copy; {{date format="YYYY"}} Thomas Clausen<span>&middot;</span>Proudly powered by <a href="http://tryghost.org" target="_blank">Ghost</a><span>&middot;</span>Theme by <a href="http://www.thomasclausen.dk" target="_blank">Thomas Clausen</a></p>
-	</div>
+	<p>Copyright &copy; {{date format="YYYY"}} Thomas Clausen<span>&middot;</span>Proudly powered by <a href="http://tryghost.org" target="_blank">Ghost</a><span>&middot;</span>Theme by <a href="http://www.thomasclausen.dk" target="_blank">Thomas Clausen</a></p>
 </footer>
 
 {{ghost_foot}}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{asset "js/jquery-1.10.2.min.js"}}"><\/script>')</script>
+<script src="{{asset "js/jquery.fitvids.js"}}"></script>
 <script src="{{asset "js/script.js"}}"></script>
 </body>
 

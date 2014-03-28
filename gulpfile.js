@@ -33,7 +33,10 @@ var paths = {
     'src/assets/css/normalize.css',
     'src/assets/css/style.css'
   ],
-  scripts: 'src/assets/js/script.js',
+  scripts: [
+    'src/assets/js/jquery.fitvids.js',
+    'src/assets/js/script.js',
+  ],
   images: 'src/assets/images/*'
 };
 
