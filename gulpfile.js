@@ -18,7 +18,7 @@ var paths = {
   copy: {
     root: [
       'src/*.hbs',
-      'src/README.md'
+      'src/*.json'
     ],
     partials_root: 'src/partials/*.hbs',
     partials_custom: 'src/partials/custom/*.hbs',
