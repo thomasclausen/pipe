@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
+    htmlreplace = require('gulp-html-replace'),
     csslint = require('gulp-csslint'),
     cssmin = require('gulp-cssmin'),
     jshint = require('gulp-jshint'),
@@ -94,19 +95,28 @@ gulp.task('copy', function() {
     .pipe(gulp.dest(pkg.name + '/assets/js/'));
 });
 
+gulp.task('replace', ['copy'], function() {
+  gulp.src('src/default.hbs')
+    .pipe(htmlreplace({
+      'css': '<link rel="stylesheet" id="' + pkg.name + '-css" href="{{asset "css/' + pkg.name + '.min.css"}}" />',
+      'js': '<script src="{{asset "js/' + pkg.name + '.min.js"}}" async></script>'
+    }))
+    .pipe(gulp.dest(pkg.name));
+});
+
 gulp.task('wath', function() {
   gulp.watch(paths.styles, ['styles-test', 'styles']);
   gulp.watch(paths.scripts, ['scripts-test', 'scripts']);
   gulp.watch(paths.images, ['images']);
-  gulp.watch(paths.copy.root, ['copy']);
-  gulp.watch(paths.copy.partials_root, ['copy']);
-  gulp.watch(paths.copy.partials_custom, ['copy']);
-  gulp.watch(paths.copy.fonts, ['copy']);
-  gulp.watch(paths.copy.js, ['copy']);
+  gulp.watch(paths.copy.root, ['replace']);
+  gulp.watch(paths.copy.partials_root, ['replace']);
+  gulp.watch(paths.copy.partials_custom, ['replace']);
+  gulp.watch(paths.copy.fonts, ['replace']);
+  gulp.watch(paths.copy.js, ['replace']);
 });
 
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts', 'images', 'copy');
+  gulp.start('styles', 'scripts', 'images', 'replace');
 });
 
 gulp.task('test', function() {
