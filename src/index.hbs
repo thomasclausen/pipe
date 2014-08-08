@@ -6,18 +6,14 @@
 {{/contentFor}}
 
 {{#contentFor "meta-facebook"}}
-	<meta property="og:type" content="blog"/>
+	<meta property="og:type" content="blog" />
 	<meta property="og:title" content="{{@blog.title}}" />
 	<meta property="og:description" content="{{@blog.description}}" />
 {{/contentFor}}
 
 {{#contentFor "meta-gplus"}}
-	<meta itemprop="name" content="{{title}}">
-	<meta itemprop="description" content="{{excerpt}}">
+	<meta itemprop="name" content="{{@blog.title}}" />
+	<meta itemprop="description" content="{{@blog.description}}" />
 {{/contentFor}}
 
-{{#foreach posts}}
-	{{> list-post}}
-{{/foreach}}
-
-{{pagination}}
+{{> list-post}}
