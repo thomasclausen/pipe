@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     csslint = require('gulp-csslint'),
     cssmin = require('gulp-cssmin'),
     jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
+    jsmin = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     notify = require('gulp-notify'),
     watch = require('gulp-watch'),
@@ -64,7 +64,7 @@ gulp.task('styles-test', function() {
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
     .pipe(concat(pkg.name + '.js', {newLine: ';'}))
-    .pipe(uglify())
+    .pipe(jsmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(pkg.name + '/assets/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
