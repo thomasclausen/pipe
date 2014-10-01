@@ -1,6 +1,10 @@
 {
   "name": "pipe",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomasclausen/pipe-ghost.git"
+  },
   "devDependencies": {
     "path": "~0.4.9",
     "gulp": "^3.8.7",
