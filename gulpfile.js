@@ -25,8 +25,7 @@ var paths = {
   ],
   scripts: [
     'src/assets/js/classie.js',
-    'src/assets/js/imagesloaded.pkgd.min.js',
-    'src/assets/js/jquery.fitvids.js',
+    'src/assets/js/imagesloaded.pkgd.js',
     'src/assets/js/script.js',
   ],
   images: 'src/assets/images/*',
@@ -37,9 +36,7 @@ var paths = {
       'src/*.json'
     ],
     fonts: 'src/assets/fonts/*',
-    js: [
-      'src/assets/js/jquery-1.10.2.min.js'
-    ],
+    js: '',
     partials_root: 'src/partials/*.hbs',
     partials_custom: 'src/partials/custom/*.hbs'
   }
@@ -60,7 +57,7 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(pkg.name + '/assets/css'));
 });
 gulp.task('styles-test', ['styles'], function() {
-  return gulp.src(pkg.name + '/css/style.css')
+  return gulp.src(pkg.name + '/assets/css/style.css')
     .pipe(csslint('csslintrc.json'))
     .pipe(csslint.reporter());
 });
@@ -112,7 +109,7 @@ gulp.task('replace', ['copy'], function() {
     .pipe(gulp.dest(pkg.name));
 });
 
-gulp.task('wath', function() {
+gulp.task('watch', function() {
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.images, ['images']);
