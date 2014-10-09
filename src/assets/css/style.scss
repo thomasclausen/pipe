@@ -19,8 +19,6 @@
    8.  Pagination
    9.  Footer
 
-   10. Media Queries
-
  */
 
 /* ==========================================================================
@@ -44,6 +42,10 @@ body {
 	line-height: 1.625em;
 	color: #2c2c2c;
 	background-color: #f6f6f6;
+
+	@media only screen and (min-width: 960px) {
+		font-size: 1.6rem;
+	}
 }
 h1 {
 	font-size: 2em;
@@ -271,114 +273,114 @@ article:after {
 
 .home-template,
 .archive-template {
+	
 
-}
-.home-template article,
-.archive-template article {
-	margin-bottom: 48px;
-	position: relative;
-}
-.home-template article,
-.archive-template article {
-	background-color: #fff;
-}
-.home-template article .post-image,
-.archive-template article .post-image {
-}
-.home-template article .post-image .image,
-.archive-template article .post-image .image {
-	padding-bottom: 100%;
-	background-position: 50% 50%;
-	background-size: cover;
-}
-.home-template article .post-image p,
-.archive-template article .post-image p {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-.home-template article .post-image img,
-.archive-template article .post-image img {
-	width: auto;
-	height: 100%;
-	position: absolute;
-}
-.home-template article .post-excerpt,
-.archive-template article .post-excerpt {
-	padding: 1em 1.5em;
-}
-.home-template article .post-excerpt .post-meta,
-.archive-template article .post-excerpt .post-meta {
-	font-weight: 600;
-	text-transform: uppercase;
-	padding-top: 1px;
-	padding-bottom: 1px;
-	border-bottom: 1px solid #1f3d49;
-}
-.home-template article .post-excerpt h1,
-.archive-template article .post-excerpt h1 {
-	color: #2c2c2c;
-	margin-bottom: 0.5em;
-}
-.home-template article .post-excerpt h1 a,
-.archive-template article .post-excerpt h1 a {
-	color: #2c2c2c;
-	text-decoration: none;
-}
-.home-template article .post-excerpt .read-more,
-.archive-template article .post-excerpt .read-more {
-	line-height: 3.125em;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: #1f3d49;
-	margin-top: 2em;
-	display: inline-block;
-	opacity: 0.6;
-	overflow: hidden;
-	transition: opacity 0.3s;
-}
-.home-template article .post-excerpt .read-more:hover,
-.archive-template article .post-excerpt .read-more:hover {
-	opacity: 1;
-}
-.home-template article .post-excerpt .read-more a,
-.archive-template article .post-excerpt .read-more a {
-	color: #1f3d49;
-	text-decoration: none;
-	padding-right: 1em;
-	display: block;
-}
-.home-template article .post-excerpt .read-more .rectangle,
-.archive-template article .post-excerpt .read-more .rectangle {
-	width: 50px;
-	height: 50px;
-	margin: 0 16px 2px -6px;
-	display: inline-block;
-	overflow: hidden;
-	vertical-align: middle;
-	transition: margin-left 0.3s;
-}
-.home-template article .post-excerpt .read-more:hover .rectangle,
-.archive-template article .post-excerpt .read-more:hover .rectangle {
-	margin-left: 0;
-}
-.home-template article .post-excerpt .read-more .circle,
-.archive-template article .post-excerpt .read-more .circle {
-	width: 50px;
-	height: 50px;
-	background: #1f3d49;
-	border-radius: 50%;
-	position: relative;
-	overflow: hidden;
-}
-.home-template article .post-excerpt .read-more .circle img,
-.archive-template article .post-excerpt .read-more .circle img {
-	width: 14px;
-	height: 22px;
-	margin-top: -11px;
-	margin-left: -7px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
+	article {
+		background-color: #fff;
+		margin-bottom: 48px;
+		position: relative;
+
+		.post-image {
+			padding-bottom: 100%;
+			background-position: 50% 50%;
+			background-size: cover;
+
+			@media only screen and (min-width: 960px) {
+				width: 50%;
+				float: right;
+			}
+		}
+		.post-excerpt {
+			padding: 1em 1.5em;
+
+			@media only screen and (min-width: 560px) {
+				padding: 2.5em 3em;
+			}
+			@media only screen and (min-width: 960px) {
+				width: 50%;
+				float: left;
+			}
+
+			.post-meta {
+				font-weight: 600;
+				text-transform: uppercase;
+				padding-top: 1px;
+				padding-bottom: 1px;
+				border-bottom: 1px solid #1f3d49;
+			}
+			h1 {
+				color: #2c2c2c;
+				margin-bottom: 0.5em;
+
+				a {
+					color: #2c2c2c;
+					text-decoration: none;
+				}
+			}
+			.read-more {
+				line-height: 3.125em;
+				font-weight: 700;
+				text-transform: uppercase;
+				color: #1f3d49;
+				margin-top: 2em;
+				display: inline-block;
+				opacity: 0.6;
+				overflow: hidden;
+				transition: opacity 0.3s;
+
+				&:hover {
+					opacity: 1;
+
+					.rectangle {
+						margin-left: 0;
+					}
+				}
+
+				@media only screen and (min-width: 960px) {
+					margin-top: 1em;
+					margin-bottom: -0.5em;
+				}
+				@media only screen and (min-width: 1024px) {
+					margin-top: 2em;
+					margin-bottom: 0;
+				}
+
+				a {
+					color: #1f3d49;
+					text-decoration: none;
+					padding-right: 1em;
+					display: block;
+				}
+				.rectangle {
+					width: 50px;
+					height: 50px;
+					margin: 0 16px 2px -6px;
+					display: inline-block;
+					overflow: hidden;
+					vertical-align: middle;
+					transition: margin-left 0.3s;
+				}
+				.circle {
+					width: 50px;
+					height: 50px;
+					background: #1f3d49;
+					border-radius: 50%;
+					position: relative;
+					overflow: hidden;
+
+					img {
+						width: 14px;
+						height: 22px;
+						margin-top: -11px;
+						margin-left: -7px;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+					}
+				}
+			}
+		}
+	}
 }
 
 
@@ -642,60 +644,61 @@ nav.blog-pagination {
 				position: absolute;
 				top: 0;
 				white-space: nowrap;
+
+				&:hover {
+					background: #1f3d49;
+
+					h3 {
+						display: inline-block;
+					}
+				}
+
+				a {
+					color: #fff;
+					text-decoration: none;
+					display: block;
+				}
+				h3 {
+					background: #1f3d49;
+					display: none;
+					position: absolute;
+					top: 0;
+				}
 			}
 			&.prev {
 				margin-right: 1px;
 				right: 100%;
+
+				h3 {
+					margin-left: 1px;
+					left: 100%;
+				}
 			}
 			&.next {
 				margin-left: 1px;
 				left: 100%;
+
+				h3 {
+					margin-right: 1px;
+					right: 100%;
+				}
+			}
+
+			h3 {
+				font-size: 1em;
+				padding-right: 1.25em;
+				padding-left: 1.25em;
+				margin-top: 0;
+				margin-bottom: 0;
+				display: inline-block;
+			}
+			.icon {
+				width: 3.75em;
+				height: 3.75em;
+				display: inline-block;
 			}
 		}
 	}
-}
-nav.blog-pagination ul li.prev:hover,
-nav.blog-pagination ul li.next:hover {
-	background: #1f3d49;
-}
-nav.blog-pagination ul li h3 {
-	font-size: 1em;
-	padding-right: 1.25em;
-	padding-left: 1.25em;
-	margin-top: 0;
-	margin-bottom: 0;
-	display: inline-block;
-}
-nav.blog-pagination ul li.prev a,
-nav.blog-pagination ul li.next a {
-	color: #fff;
-	text-decoration: none;
-	display: block;
-}
-nav.blog-pagination ul li.prev h3,
-nav.blog-pagination ul li.next h3 {
-	background: #1f3d49;
-	display: none;
-	position: absolute;
-	top: 0;
-}
-nav.blog-pagination ul li.prev h3 {
-	margin-left: 1px;
-	left: 100%;
-}
-nav.blog-pagination ul li.next h3 {
-	margin-right: 1px;
-	right: 100%;
-}
-nav.blog-pagination ul li.prev:hover h3,
-nav.blog-pagination ul li.next:hover h3 {
-	display: inline-block;
-}
-nav.blog-pagination ul li.prev .icon,
-nav.blog-pagination ul li.next .icon {
-	width: 3.75em;
-	height: 3.75em;
-	display: inline-block;
 }
 
 
@@ -733,46 +736,5 @@ footer {
 		margin-right: 14px;
 		margin-left: 14px;
 		white-space: nowrap;
-	}
-}
-
-
-/* ==========================================================================
-   10. Media Queries
-   ========================================================================== */
-
-@media only screen and (min-width: 560px) {
-	.home-template article .post-excerpt,
-	.archive-template article .post-excerpt {
-		padding: 2.5em 3em;
-	}
-}
-
-@media only screen and (min-width: 960px) {
-	body {
-		font-size: 1.6rem;
-	}
-	.home-template article .post-image,
-	.archive-template article .post-image {
-		width: 50%;
-		float: right;
-	}
-	.home-template article .post-excerpt,
-	.archive-template article .post-excerpt {
-		width: 50%;
-		float: left;
-	}
-	.home-template article .post-excerpt .read-more,
-	.archive-template article .post-excerpt .read-more {
-		margin-top: 1em;
-		margin-bottom: -0.5em;
-	}
-}
-
-@media only screen and (min-width: 1024px) {
-	.home-template article .post-excerpt .read-more,
-	.archive-template article .post-excerpt .read-more {
-		margin-top: 2em;
-		margin-bottom: 0;
 	}
 }
