@@ -2,13 +2,12 @@
  * Main JS file for Pipe
  **/
 
-+function () {
+(function () {
 	'use strict';
 
 	var documentState = null,
-		html = document.querySelectorAll('html'),
 		body = document.body;
-		
+
 	function poorMansDebugging(string) {
 		if (window.console) {
 			console.log(string);
@@ -16,8 +15,6 @@
 	}
 
 	function init() {
-		classie.remove(html, 'no-js'); // Modernizr normally fixes this ?
-
 		if (classie.has(body, 'post-template')) {
 			var postMeta = document.querySelectorAll('.post-meta time');
 			postMeta.innerHTML(postMeta.innerHTML.replace('st', '<sup>st</sup>'));
@@ -28,10 +25,10 @@
 	}
 
 	documentState = setInterval(function () {
-		poorMansDebugging('state: ' + document.readyState);
+		poorMansDebugging('documentState: ' + document.readyState);
 		if (document.readyState === 'complete') {
 			clearInterval(documentState);
 			init();
 		}
 	}, 100);
-}();
+})();
