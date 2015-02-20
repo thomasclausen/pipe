@@ -24,7 +24,7 @@ var paths = {
     'src/assets/css/style.scss'
   ],
   scripts: [
-    'src/js/modernizr.custom.js',
+    'src/assets/js/modernizr.custom.js',
     'src/assets/js/classie.js',
     'src/assets/js/imagesloaded.pkgd.js',
     'src/assets/js/script.js',
@@ -133,7 +133,7 @@ gulp.task('replace', function() {
       },
       js: {
         src: '{{asset "js/' + pkg.name + '.min.js"}}',
-        tpl: '<script src="%s" async></script>'
+        tpl: '<script type="text/javascript" src="%s" async></script>'
       }
     }))
     .pipe(gulp.dest(pkg.name));
