@@ -24,18 +24,14 @@
 		<meta itemprop="description" content="{{excerpt}}" />
 	{{/contentFor}}
 
-	<article id="post-{{id}}" class="{{post_class}}" role="article">
+	<article id="post-{{id}}" class="{{post_class}}" role="article" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 		<div class="post-image">
-			<div class="post-image-caption">
-				<div class="rectangle">
-					<div class="circle"></div>
-				</div>
-			</div>
+			<img src="{{image}}" alt="" itemprop="image" />
 		</div>
 		<div class="post-content">
-			<h1 class="post-title">{{{title}}}</h2>
-			{{content}}
-			<div class="post-meta">&mdash; Published by {{#if author.website}}<a href="{{author.website}}">{{author.name}}</a>{{else}}{{author.name}}{{/if}} on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="Do MMMM YYYY"}}</time> {{tags prefix="on " separator=" | "}}</div>
+			<h1 class="post-title" itemprop="name headline">{{{title}}}</h1>
+			<div class="post-meta">&mdash; Published by <span itemscope="" itemprop="author" itemtype="http://schema.org/Person"><span itemprop="name">{{#if author.website}}<a href="{{author.website}}" itemprop="url" rel="author">{{author.name}}</a>{{else}}{{author.name}}{{/if}}</span></span> on <time datetime="{{date format='YYYY-MM-DD'}}" itemprop="datePublished">{{date format="Do MMMM YYYY"}}</time> {{tags prefix="on " separator=" | "}}</div>
+			<div itemprop="articleBody">{{content}}</div>
 		</div>
 		<div class="post-share">
 			<h3>Share this post</h3>
