@@ -1,0 +1,36 @@
+{{!< default}}
+
+{{#author}}
+	{{#contentFor "meta-facebook"}}
+		<meta property="og:type" content="article" />
+
+		<meta property="article:publisher" content="https://www.facebook.com/facebookusername" />
+		<meta property="article:author" content="https://www.facebook.com/facebookusername" />
+		<meta property="article:published_time" content="{{date format='YYYY-MM-DD'}}" />
+	{{/contentFor}}
+
+	<h1 class="author-name">{{name}}</h1>
+	<h2 class="author-biography">{{#if bio}}{{bio}}{{else}}A {{name}}-post collection{{/if}}</h2>
+
+	{{#if image}}
+		<img src="{{image}}" alt="{{name}}" />
+	{{/if}}
+
+	<div class="author-meta">
+		{{#if location}}
+			<p class="author-location icon-location">{{location}}</p>
+		{{/if}}
+		{{#if website}}
+			<p class="author-link icon-link"><a href="{{website}}">{{website}}</a></p>
+		{{/if}}
+		<p class="author-stats">{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</p>
+	</div>
+
+	<p><a class="subscribe-button icon-feed" href="{{url}}rss/">{{name}}</a></p>
+
+	{{#if cover}}
+		{{cover}}
+	{{/if}}
+{{/author}}
+
+{{> list-post}}
