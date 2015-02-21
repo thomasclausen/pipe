@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="da-DK">
+<html lang="da-DK">
 
 <head>
 <meta charset="utf-8" />
@@ -29,27 +29,27 @@
 </head>
 
 <body class="{{body_class}}">
-<header class="blog-header" role="banner">
+<header class="site-header" role="banner">
 	{{#if @blog.logo}}
-		<div class="blog-logo"><a href="{{@blog.url}}" title="{{@blog.title}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a></div>
+		<div class="site-logo"><a href="{{@blog.url}}" title="{{@blog.title}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a></div>
 	{{/if}}
-	<div class="blog-title">
+	<div class="site-title">
 		<h1><a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a></h1>
 	</div>
-	<div class="blog-description">
+	<div class="site-description">
 		<h2>{{@blog.description}}</h2>
 	</div>
 	{{#if @blog.cover}}
-		<div class="blog-cover" style="background-image: url({{@blog.cover}})"></div>
+		<div class="site-cover" style="background-image: url({{@blog.cover}})"></div>
 	{{/if}}
 	{{> custom/navigation}}
 </header>
 
-<section class="blog-content" role="main">
+<section class="site-content" role="main">
 	{{{body}}}
 </section>
 
-<footer class="blog-footer" role="contentinfo">
+<footer class="site-footer" role="contentinfo">
 	<p>Copyright &copy; {{date format="YYYY"}} Thomas Clausen<span>&middot;</span>Proudly powered by <a href="http://tryghost.org" target="_blank">Ghost</a><span>&middot;</span>Theme by <a href="http://www.thomasclausen.dk" target="_blank">Thomas Clausen</a></p>
 </footer>
 
