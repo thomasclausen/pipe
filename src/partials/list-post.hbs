@@ -1,14 +1,19 @@
 {{#foreach posts}}
 	<article id="post-{{id}}" class="{{post_class}}" role="article">
-		<div class="post-image">
-			<a href="{{url}}" title="{{{title}}}">{{content words="0"}}</a>
-		</div>
+		<a href="{{url}}" title="{{{title}}}">
+		<div class="post-image" style="background-image:url({{image}})"></div>
+		</a>
 		<div class="post-excerpt">
 			<div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM YYYY"}}</time></div>
-			<h1 class="post-title"><a href="{{url}}" title="{{{title}}}">{{{title}}}</a></h1>
+			<h2 class="post-title"><a href="{{url}}" title="{{{title}}}">{{{title}}}</a></h2>
 			<p>{{excerpt words="42"}} &hellip;</p>
 			<div class="read-more"><a href="{{url}}" title="{{{title}}}"><div class="rectangle"><div class="circle"><img src="{{asset "images/arrow-right.svg"}}" alt="" /></div></div>Read more</a></div>
 		</div>
+		<footer class="post-meta">
+			{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
+			{{author}}
+			{{tags prefix=" on "}}
+		</footer>
 	</article>
 {{/foreach}}
 

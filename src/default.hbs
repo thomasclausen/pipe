@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="da-DK" itemscope itemtype="http://schema.org/Blog">
+<html class="no-js" lang="da-DK" itemscope="" itemtype="http://schema.org/Blog">
 
 <head>
 <meta charset="utf-8" />
@@ -36,8 +36,12 @@
 	{{#if @blog.logo}}
 		<div class="blog-logo"><a href="{{@blog.url}}" title="{{@blog.title}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a></div>
 	{{/if}}
-	<div class="blog-title"><h1><a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a></h1></div>
-	<div class="blog-description"><h2>{{@blog.description}}</h2></div>
+	<div class="blog-title">
+		<h1><a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a></h1>
+	</div>
+	<div class="blog-description">
+		<h2>{{@blog.description}}</h2>
+	</div>
 	{{#if @blog.cover}}
 		<div class="blog-cover" style="background-image: url({{@blog.cover}})"></div>
 	{{/if}}
