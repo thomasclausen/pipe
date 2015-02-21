@@ -1,19 +1,7 @@
 {{!< default}}
 
-{{#contentFor "meta-twitter"}}
-	<meta name="twitter:title" content="{{@blog.title}}" />
-	<meta name="twitter:description" content="{{@blog.description}}" />
-{{/contentFor}}
-
 {{#contentFor "meta-facebook"}}
 	<meta property="og:type" content="blog" />
-	<meta property="og:title" content="{{@blog.title}}" />
-	<meta property="og:description" content="{{@blog.description}}" />
-{{/contentFor}}
-
-{{#contentFor "meta-gplus"}}
-	<meta itemprop="name" content="{{@blog.title}}" />
-	<meta itemprop="description" content="{{@blog.description}}" />
 {{/contentFor}}
 
 {{> list-post}}

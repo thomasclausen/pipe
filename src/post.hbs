@@ -1,16 +1,8 @@
 {{!< default}}
 
 {{#post}}
-	{{#contentFor "meta-twitter"}}
-		<meta name="twitter:title" content="{{title}}" />
-		<meta name="twitter:description" content="{{excerpt}}" />
-	{{/contentFor}}
-
 	{{#contentFor "meta-facebook"}}
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="{{title}}" />
-		<meta property="og:description" content="{{excerpt}}" />
-
 		<meta property="article:publisher" content="https://www.facebook.com/facebookusername" />
 		<meta property="article:author" content="https://www.facebook.com/facebookusername" />
 		<meta property="article:published_time" content="{{date format='YYYY-MM-DD'}}" />
@@ -19,18 +11,13 @@
 		{{/foreach}}
 	{{/contentFor}}
 
-	{{#contentFor "meta-gplus"}}
-		<meta itemprop="name" content="{{title}}" />
-		<meta itemprop="description" content="{{excerpt}}" />
-	{{/contentFor}}
-
 	<article id="post-{{id}}" class="{{post_class}}" role="article">
 		<div class="post-image">
 			<img src="{{image}}" alt="" />
 		</div>
 		<div class="post-content">
 			<h1 class="post-title">{{{title}}}</h1>
-			<div class="post-meta">&mdash; Published by {{#if author.website}}<a href="{{author.website}}" rel="author">{{author.name}}</a>{{else}}{{author.name}}{{/if}} on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="Do MMMM YYYY"}}</time> {{tags prefix="on " separator=" | "}}</div>
+			<div class="post-meta">&mdash; Published by {{author}} on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="Do MMMM YYYY"}}</time> {{tags prefix="on " separator=" | "}}</div>
 			{{content}}
 		</div>
 		<div class="post-share">
@@ -40,5 +27,9 @@
 			<div class="icon gplus"><a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'googleplus-share', 'width=560,height=360');return false;">Google+</a></div>
 			<div class="icon linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}&amp;title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=560,height=500');return false;">LinkedIn</a></div>
 		</div>
+
+		{{!> comments-disqus}}
+		{{!> comments-facebook}}
+		{{!> comments-google-plus}}
 	</article>
 {{/post}}
