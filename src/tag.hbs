@@ -1,0 +1,15 @@
+{{!< default}}
+
+{{#contentFor "meta-facebook"}}
+	<meta property="og:type" content="blog" />
+	<meta property="article:tag" content="{{tag.name}}" />
+{{/contentFor}}
+
+<h1 class="tag-title">{{tag.name}}</h1>
+<h2 class="tag-description">{{#if tag.description}}{{tag.description}}{{else}}A {{tag.name}}-post collection{{/if}}</h2>
+
+{{#if tag.image}}
+	<img src="{{tag.image}}" alt="{{tag.name}}" />
+{{/if}}
+
+{{> list-post}}
